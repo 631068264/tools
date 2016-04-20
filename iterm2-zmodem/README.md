@@ -1,39 +1,36 @@
-ZModem integration for iTerm 2
-------------------------------
+# Introduction
+Help you use ZModem transfers from your OSX.Transfer file with SSH in 
+iTerm2
 
-This script can be used to automate ZModem transfers from your OSX desktop to a server that can run lrzsz (in theory, any machine 
-that supports SSH), and vice-versa.
-
-The minimum supported iTerm2 version is 1.0.0.20120108
-
+# Installation
 Setup is pretty simple:
 
-0. Install lrzsz on OSX: brew install lrzsz
-1. Save the iterm2-send-zmodem.sh and iterm2-recv-zmodem.sh scripts in /usr/local/bin/
-2. Set up Triggers in iTerm 2 like so:
+ 
 
+ 1. Install lrzsz on OSX: `brew install lrzsz`
+ 2. Save the **iterm2-zmodem**  in **/usr/local/bin/**
+ 3. `chmod a+x iterm2-zmodem`
+ 4. Edit **Triggers** in iTerm 2 like so:
 <pre>
-    Regular expression: rz waiting to receive.\*\*B0100
-    Action: Run Silent Coprocess
-    Parameters: /usr/local/bin/iterm2-send-zmodem.sh
+    Regular expression: \*\*B0100
+    Action:             Run Coprocess
+    Parameters:         /usr/local/bin/iterm2-zmodem sz
 
     Regular expression: \*\*B00000000000000
-    Action: Run Silent Coprocess
-    Parameters: /usr/local/bin/iterm2-recv-zmodem.sh
+    Action:             Run Coprocess
+    Parameters:         /usr/local/bin/iterm2-zmodem rz
 </pre>
 
-To send a file to a remote machine:
+To **send** a file to a remote machine:
 
-1. Type "rz" on the remote machine
+1. Type `rz` on the remote machine
 2. Select the file(s) on the local machine to send
 3. Wait for the coprocess indicator to disappear
 
-The receive a file from a remote machine
+The **receive** a file from a remote machine
 
-1. Type "sz filename1 filename2 … filenameN" on the remote machine
+1. Type "`sz filename1 filename2 … filenameN`" on the remote machine
 2. Select the folder to receive to on the local machine
 3. Wait for the coprocess indicator to disappear
 
-Future plans (patches welcome)
 
- - Visual progress bar indicator
