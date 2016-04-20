@@ -10,5 +10,6 @@ Python 编码规范，git commit 前检查规范
 
 ------------
 
-- iterm2-zmodem
+- Iterm2-zmodem
+在Iterm2中使用SSH时可用进行文件传输
 
