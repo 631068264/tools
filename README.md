@@ -4,17 +4,7 @@
 Python 编码规范，git commit 前检查规范
 
 ------------
-- Autoenv
 
-使用 virtualenv 工具时，`cd` 进入含有**.env**文件夹时自动 `activative`
+mac 配置
 
-------------
 
-- Iterm2-zmodem
-
-在Iterm2中使用SSH时可用进行文件传输
-
-------------
-- APKDecompiler
-
-APK反编译
